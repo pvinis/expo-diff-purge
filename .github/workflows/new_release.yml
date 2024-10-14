@@ -1,0 +1,18 @@
+name: Run new-release script
+
+on:
+  workflow_dispatch:
+  repository_dispatch:
+    types: [publish]
+
+jobs:
+  generate_diffs:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - uses: jdx/mise-action@v2
+      - run: pnpm install
+
+      - name: Run new-release script
+        run: ./scripts/new-release.sh ${{ github.event.client_payload.version }}

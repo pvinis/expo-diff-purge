@@ -1,0 +1,21 @@
+name: Send notifications when a new release is published
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+
+env:
+  SPECIAL_GITHUB_TOKEN: ${{ secrets.SPECIAL_GITHUB_TOKEN }}
+
+jobs:
+  release_notifications:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: jdx/mise-action@v2
+      - run: pnpm install
+
+      - name: Notify upgrade-support of a new release
+        run: ./scripts/notify-new-release.js
