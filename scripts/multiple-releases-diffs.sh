@@ -4,6 +4,7 @@ set -euxo pipefail
 releases=(
 50
 49
+48
 )
 
 
