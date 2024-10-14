@@ -132,11 +132,6 @@ function pushMaster () {
     git push
 }
 
-function cleanUpYarnStuff () {
-    rm -rf .yarn
-    pnpx node-jq 'del(.packageManager)' package.json | npx sponge package.json
-}
-
 function generateTable () {
     head -n "$NumberOfReleases" "$ReleasesFile" | ./scripts/generate-table.js > "$ReadmeTable"
 }
@@ -183,8 +178,6 @@ prepare
 generateNewReleaseBranch
 addReleaseToList
 generateDiffs
-
-cleanUpYarnStuff
 
 generateTable
 generateReadme

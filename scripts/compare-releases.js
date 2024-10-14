@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
-import { gte } from "semver"
+import { gte, coerce } from "semver"
 
-const left = process.argv[2]
-const right = process.argv[3]
+const left = coerce(process.argv[2])
+const right = coerce(process.argv[3])
 
 if (gte(left, right)) {
 	process.exit(0)
