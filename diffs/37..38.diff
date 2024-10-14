@@ -1,0 +1,120 @@
+diff --git a/ExpoDiffApp/.gitignore b/ExpoDiffApp/.gitignore
+index c409cf6..73e9e94 100644
+--- a/ExpoDiffApp/.gitignore
++++ b/ExpoDiffApp/.gitignore
+@@ -8,7 +8,6 @@ npm-debug.*
+ *.mobileprovision
+ *.orig.*
+ web-build/
+-web-report/
+ 
+ # macOS
+ .DS_Store
+diff --git a/ExpoDiffApp/App.js b/ExpoDiffApp/App.js
+index 7d771f2..181f3ce 100644
+--- a/ExpoDiffApp/App.js
++++ b/ExpoDiffApp/App.js
+@@ -1,3 +1,4 @@
++import { StatusBar } from 'expo-status-bar';
+ import React from 'react';
+ import { StyleSheet, Text, View } from 'react-native';
+ 
+@@ -5,6 +6,7 @@ export default function App() {
+   return (
+     <View style={styles.container}>
+       <Text>Open up App.js to start working on your app!</Text>
++      <StatusBar style="auto" />
+     </View>
+   );
+ }
+diff --git a/ExpoDiffApp/app.json b/ExpoDiffApp/app.json
+index 933ffc1..de368e1 100644
+--- a/ExpoDiffApp/app.json
++++ b/ExpoDiffApp/app.json
+@@ -2,11 +2,6 @@
+   "expo": {
+     "name": "ExpoDiffApp",
+     "slug": "ExpoDiffApp",
+-    "platforms": [
+-      "ios",
+-      "android",
+-      "web"
+-    ],
+     "version": "1.0.0",
+     "orientation": "portrait",
+     "icon": "./assets/icon.png",
+@@ -23,6 +18,9 @@
+     ],
+     "ios": {
+       "supportsTablet": true
++    },
++    "web": {
++      "favicon": "./assets/favicon.png"
+     }
+   }
+ }
+diff --git a/ExpoDiffApp/assets/favicon.png b/ExpoDiffApp/assets/favicon.png
+new file mode 100644
+index 0000000000000000000000000000000000000000..e75f697b1801871ad8cd9309b05e8ffe8c6b6d01
+GIT binary patch
+literal 1466
+zcmV;r1x5OaP)<h;3K|Lk000e1NJLTq001xm001xu1ONa5iVOjo000GnNkl<ZSi`lK
+zYitx%6vzK<Ded+_TS|F|3T0_Q3ksnHl|YPOtO+Q_AZSboQj{1pA{Ir6FGAGP=m(-G
+zN{B!(NB}`V5J|NSMO2`Qk5;Hc3-TyxX`u_-?f(3*GrKdpvr8@U%$K?Mod5aXd+t5w
+z%t&^r^8-krZhNN^7)VOl4<Mii%BX=h6nLcmzhJ&fQre!NH@|@a!6!g!zzE<a6mSmk
+zM#zCNu*i)7(07A0q6nt8O4~7HpaERsZ9*uyGBAD4BqgOtl9c{EJWGgbWsq>F>1w{Y
+zBeHf{*q3<2*AtQf4s&-m0MsH$EBv51Nj=s=Appw|nd1Yi(-DKZBN$9bAlWN83A_)0
+z$4U=S!XyBuAm(`t#aW=l*tHPgHRE~MrmzGWN*Eidc=$BV2uYe|Rpi@t-me&ht6I?|
+ze$M(9=%DxSVTwNL7B<tfp`LI_@k!E};5geWNyV=<g-nhz6ZqA#@a!?Bu0KL?UqBJQ
+zAYeKT0NiQWX<AO;-Q|^(SYevp&&Od4@{z`{RbeZ4?K9PZD0&$Kd=y+#K=RJ1y8%f3
+z*2`!Mz>*O`z`fRE$T)18O{B^J5OHo<N9;>#W<qR$BxSy|+ZSy~LL|2+-szB2NBk2G
+zh@Ypc%g{|TNbo3GotB$in>%kD-}gAcJO3n1x6Q{X*TFh-d!yx?Z$G16f%*K?exQ+p
+ztyb%4*R_Y=)qQBLG-9hc_A|ub$th|8Sk1bi@fFe$DwUpU57nc*-z8<&dM#e3a2hB!
+z16wLhz7o)!MC8}$7Jv9c-X$w^Xr<CE<p572M9=Hh%4XgT8aFT<fFCRXDes%WXwVCi
+zE&}i<$ALmREKEy+0GqT0BjAq6=;dUzD<urz395glj@iLcJwlYx!oWHk;Iah(P|hy=
+z^fUHQ2EZ<V@0WvsSz!Qsu`4rX%5kkT0PVcRj+lU2gh<<900ISO0?m$q*U2&7GB#Oy
+zB|w|eD8lM*s5x!3v;uPvmAn!a&}*jy0N_~;I|6!}4Lqyze2gero*P0((cOJIHX#0q
+z$Yd*grqvmcUJ*5&2fepH4AA|O60cGNavMD%z^$FD8(Cv72rbezNM_oKVJB+ZtJ-pp
+zCohe-?$;#ad;YZGjK`K!7nprE=b%PJ8V^n?T08jf;!9IKqgo5<-P2+@cBL$JH&k9G
+zhJ5B5bf(XXX6G(Q%R6^0%wlo-O&>(M9+`Py)~O3rGmgbvjOzXjGl>h9lp*QEn<H(G
+zA;zsX9VaF|*Z;(}OLmhM7H}uu+2*#BXT4{ol9V}RafJIrxDfe`k~?$n11HbMiUzwG
+z!<)<_F)~3)C23S*ZnL#b9AUVjAGus{yZ3VsbNM@}`zprr3T-qohXh9gNpXXZKFthn
+zvsnz7FDYS9Akvpv%I#EG9Jlc*W2uZF+-QDXN0jxUv)y&+9+%hs=kQOn`<ub9um`@H
+zaXimNo}oEr*cy2R5x?-NS3T+Lwg_+u)y(HE4n=kUB?Soa2CMw;rrgJ45F}T590<(H
+zw1d&SP3QnySxAyY*Z7SI%>%coj{`wU^_3U|=B<B>`xxU;X3K1L?JT?0?+@K!|MWVr
+zmC=;rjX@CoW3kMZA^8ZAy52^R{+-YG!J5q^YP&$t9F`&J8*KzV4t3ZZZJ>~XP7}Bs
+z<}$a~2r_E?4rlN=(}RBkF~6rBo}Sz7#r{X49&!gODP+TcB*@uq57EII-_>qWEt44B
+z`5o+tysMLY*Dq^n@4_vzKRu3We5|DI+i%NV=Z|)QAl{d<Tp68hlW~1YGFsm9`8!3B
+zdP2or?Z*S%)el`f6@?(KBk4o)N8;KfA#YLsUz;ohNvHIn{s*}^<14Mvb^jgsFQrK)
+UPV?Y^>i_@%07*qoM6N<$f(5Fv<^TWy
+
+literal 0
+HcmV?d00001
+
+diff --git a/ExpoDiffApp/package.json b/ExpoDiffApp/package.json
+index dd69485..4884ab0 100644
+--- a/ExpoDiffApp/package.json
++++ b/ExpoDiffApp/package.json
+@@ -10,15 +10,16 @@
+     "eject": "expo eject"
+   },
+   "dependencies": {
+-    "expo": "~37.0.3",
+-    "react": "~16.9.0",
+-    "react-dom": "~16.9.0",
+-    "react-native": "https://github.com/expo/react-native/archive/sdk-37.0.1.tar.gz",
++    "expo": "~38.0.8",
++    "expo-status-bar": "^1.0.2",
++    "react": "~16.11.0",
++    "react-dom": "~16.11.0",
++    "react-native": "https://github.com/expo/react-native/archive/sdk-38.0.2.tar.gz",
+     "react-native-web": "~0.11.7"
+   },
+   "devDependencies": {
+-    "babel-preset-expo": "~8.1.0",
+-    "@babel/core": "^7.8.6"
++    "@babel/core": "^7.8.6",
++    "babel-preset-expo": "~8.1.0"
+   },
+   "private": true
+ }
