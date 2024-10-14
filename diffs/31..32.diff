@@ -1,0 +1,29 @@
+diff --git a/ExpoDiffApp/app.json b/ExpoDiffApp/app.json
+index a446c4d..012ab3e 100644
+--- a/ExpoDiffApp/app.json
++++ b/ExpoDiffApp/app.json
+@@ -3,7 +3,7 @@
+     "name": "ExpoDiffApp",
+     "slug": "ExpoDiffApp",
+     "privacy": "public",
+-    "sdkVersion": "31.0.0",
++    "sdkVersion": "32.0.0",
+     "platforms": [
+       "ios",
+       "android"
+diff --git a/ExpoDiffApp/package.json b/ExpoDiffApp/package.json
+index 144bdfb..52a77c1 100644
+--- a/ExpoDiffApp/package.json
++++ b/ExpoDiffApp/package.json
+@@ -9,9 +9,9 @@
+     "eject": "expo eject"
+   },
+   "dependencies": {
+-    "expo": "^31.0.2",
++    "expo": "^32.0.0",
+     "react": "16.5.0",
+-    "react-native": "https://github.com/expo/react-native/archive/sdk-31.0.0.tar.gz"
++    "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz"
+   },
+   "devDependencies": {
+     "babel-preset-expo": "^5.0.0"
