@@ -1,0 +1,63 @@
+diff --git a/ExpoDiffApp/.gitignore b/ExpoDiffApp/.gitignore
+index 772ef29..05647d5 100644
+--- a/ExpoDiffApp/.gitignore
++++ b/ExpoDiffApp/.gitignore
+@@ -1,17 +1,35 @@
++# Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
++
++# dependencies
+ node_modules/
++
++# Expo
+ .expo/
+ dist/
+-npm-debug.*
++web-build/
++
++# Native
++*.orig.*
+ *.jks
+ *.p8
+ *.p12
+ *.key
+ *.mobileprovision
+-*.orig.*
+-web-build/
++
++# Metro
++.metro-health-check*
++
++# debug
++npm-debug.*
++yarn-debug.*
++yarn-error.*
+ 
+ # macOS
+ .DS_Store
++*.pem
+ 
+-# Temporary files created by Metro to check the health of the file watcher
+-.metro-health-check*
++# local env files
++.env*.local
++
++# typescript
++*.tsbuildinfo
+diff --git a/ExpoDiffApp/package.json b/ExpoDiffApp/package.json
+index 4a03f1f..90920d6 100644
+--- a/ExpoDiffApp/package.json
++++ b/ExpoDiffApp/package.json
+@@ -9,10 +9,10 @@
+     "web": "expo start --web"
+   },
+   "dependencies": {
+-    "expo": "~48.0.21",
+-    "expo-status-bar": "~1.4.4",
++    "expo": "~50.0.17",
++    "expo-status-bar": "~1.11.1",
+     "react": "18.2.0",
+-    "react-native": "0.71.14"
++    "react-native": "0.73.6"
+   },
+   "devDependencies": {
+     "@babel/core": "^7.20.0"
