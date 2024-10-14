@@ -1,0 +1,179 @@
+diff --git a/ExpoDiffApp/.expo-shared/assets.json b/ExpoDiffApp/.expo-shared/assets.json
+new file mode 100644
+index 0000000..17ad228
+--- /dev/null
++++ b/ExpoDiffApp/.expo-shared/assets.json
+@@ -0,0 +1,4 @@
++{
++  "f9155ac790fd02fadcdeca367b02581c04a353aa6d5aa84409a59f6804c87acd": true,
++  "89ed26367cdb9b771858e026f2eb95bfdb90e5ae943e716575327ec325f39c44": true
++}
+\ No newline at end of file
+diff --git a/ExpoDiffApp/.gitignore b/ExpoDiffApp/.gitignore
+index a62752d..c409cf6 100644
+--- a/ExpoDiffApp/.gitignore
++++ b/ExpoDiffApp/.gitignore
+@@ -2,6 +2,13 @@ node_modules/**/*
+ .expo/*
+ npm-debug.*
+ *.jks
++*.p8
+ *.p12
+ *.key
+ *.mobileprovision
++*.orig.*
++web-build/
++web-report/
++
++# macOS
++.DS_Store
+diff --git a/ExpoDiffApp/.watchmanconfig b/ExpoDiffApp/.watchmanconfig
+deleted file mode 100644
+index 0967ef4..0000000
+--- a/ExpoDiffApp/.watchmanconfig
++++ /dev/null
+@@ -1 +0,0 @@
+-{}
+diff --git a/ExpoDiffApp/App.js b/ExpoDiffApp/App.js
+index b06aee1..7d771f2 100644
+--- a/ExpoDiffApp/App.js
++++ b/ExpoDiffApp/App.js
+@@ -1,15 +1,13 @@
+ import React from 'react';
+ import { StyleSheet, Text, View } from 'react-native';
+ 
+-export default class App extends React.Component {
+-  render() {
++export default function App() {
+   return (
+     <View style={styles.container}>
+       <Text>Open up App.js to start working on your app!</Text>
+     </View>
+   );
+ }
+-}
+ 
+ const styles = StyleSheet.create({
+   container: {
+diff --git a/ExpoDiffApp/app.json b/ExpoDiffApp/app.json
+index a446c4d..6b5755a 100644
+--- a/ExpoDiffApp/app.json
++++ b/ExpoDiffApp/app.json
+@@ -3,10 +3,11 @@
+     "name": "ExpoDiffApp",
+     "slug": "ExpoDiffApp",
+     "privacy": "public",
+-    "sdkVersion": "31.0.0",
++    "sdkVersion": "35.0.0",
+     "platforms": [
+       "ios",
+-      "android"
++      "android",
++      "web"
+     ],
+     "version": "1.0.0",
+     "orientation": "portrait",
+diff --git a/ExpoDiffApp/assets/icon.png b/ExpoDiffApp/assets/icon.png
+index 3f5bbc0ca199c3181d1f889011c7602e2daf51b9..7f5e01c5e594f57cb27becf0679fe120754a7187 100644
+GIT binary patch
+literal 1091
+zcmeAS@N?(olHy`uVBq!ia0vp^2SAtuNHCOdH@*#|SkfJR9T^xl_H+M9WCijSl0AZa
+z85pY67#JE_7#My5g&JNkFq9fFFuY1&V6d9Oz#v{QXIG#NP=YDR+ueoXe|!I#{Xiaj
+ziKnkC`(tK45g7x8Un`6l7?{01T^vIyZoR#GK3gVL=J?0&pWoyp31{nEG!eQT;pP2x
+zLc{(HQI{jTSx^37Vg7MR$dc9o?~O~@GIbqurK&T$H}3M?G~4If$AmJWBhF=Ff6ge+
+zzn+<H#&iFB+NPWOmMSV*Pk%+FCnvMtvoyEZ`swh4K<9H?)z#xIEaktq>wS~|_bt@(
+z@mrhPUk}b5eOXqzC`;3P`KlRrU%mXhgl+C@t6h5|WqFvkRcX$fwrAO4YtEJ1x0VYC
+zIqaX^aPH~Oa5eR=U*Z4wr|h+tpErw%<NQ&r1^Z1exrX)~aXgSF^)*UJQKpgO?)}em
+z?C<`0Bk8i^*U|N_B46G3^XvG%(hi%*x4QMS59T-2SACEOn=kOw?qJ#G`&Iw0&Xn{p
+z?|5qUVOiBIE3wAksWJKwk4k<uC_N+BTx7eB@iWkfO3{dJ*$1g#HNKu<n!AJ1XQlhf
+z=NcDu%^C`ULOyjyX7{+xUrFxK=&R#ow@}FD3pj1J;Kw98@vFgCw)igi;cR=9!|r)~
+z0k@^YS;j1g?3V-c1&WN_4rni(#e79(!83-fZ<zN8Ygel0F|n@ztGm~Eb<_S<kd!I=
+zid6Xrb0bb#7YbWIjQH%gX4+rfCm<<H2i@Nc?~i!h>zsW6WO{MKtn#F-Z}JtP=G<hj
+zP!Id$cZUTm#e8Lt@aoihgi{V!Z=6*ANUfj&;*Plyy1%1OK+K8y#(1xD>K<Y9Mu-zl
+z-yg}kdEW_Y&L;j3erul0-N6ZUV(W3uR?e>?rm?qf`YxRPu)e~6L5HL5p$w-pf7%s}
+zO{;3TxFzYtFF7v7OJV$mU1k%@8qV2%RXKc{)oC`<u`2s`{mYtP9h`U7zrA~1qIrVH
+z^t#3$59d@ZS$HSfZ_meXEG``D*<Zx(Ts<#SqI|mWotF%XjN0LhX=3SDi)Akzj_zl;
+z7cIfE;ZrPAly~JG<-0q01@v?nL>P2relKJH-25|qJ@3A6XDVlvzx$D!@aM6x!`H%J
+zM=sqwVENU%+N1b!%VzKT^ZUQcHaxeF`tx$>mhuh%KQ5Zsf9U1A=*!K`i>m5=)n3Z8
+z|N48C__u&0o{e7*HVW4>+W!2(zE?lE5SY_cOI#yLQW8s2t&)pUffR$0fuW_Yfw8Wk
+yNr<6^m63&&iG{X-k(GhL))VnjC>nC}Q!>*kacej-_4zZP1_n=8KbLh*2~7Y=cHpl7
+
+literal 2976
+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
+
+diff --git a/ExpoDiffApp/package.json b/ExpoDiffApp/package.json
+index 144bdfb..ccbc6f2 100644
+--- a/ExpoDiffApp/package.json
++++ b/ExpoDiffApp/package.json
+@@ -6,15 +6,18 @@
+     "start": "expo start",
+     "android": "expo start --android",
+     "ios": "expo start --ios",
++    "web": "expo start --web",
+     "eject": "expo eject"
+   },
+   "dependencies": {
+-    "expo": "^31.0.2",
+-    "react": "16.5.0",
+-    "react-native": "https://github.com/expo/react-native/archive/sdk-31.0.0.tar.gz"
++    "expo": "^35.0.0",
++    "react": "16.8.3",
++    "react-dom": "16.8.3",
++    "react-native": "https://github.com/expo/react-native/archive/sdk-35.0.0.tar.gz",
++    "react-native-web": "^0.11.7"
+   },
+   "devDependencies": {
+-    "babel-preset-expo": "^5.0.0"
++    "babel-preset-expo": "^7.1.0"
+   },
+   "private": true
+ }

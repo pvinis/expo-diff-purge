@@ -1,0 +1,55 @@
+diff --git a/ExpoDiffApp/.gitignore b/ExpoDiffApp/.gitignore
+index 4820714..c409cf6 100644
+--- a/ExpoDiffApp/.gitignore
++++ b/ExpoDiffApp/.gitignore
+@@ -9,3 +9,6 @@ npm-debug.*
+ *.orig.*
+ web-build/
+ web-report/
++
++# macOS
++.DS_Store
+diff --git a/ExpoDiffApp/.watchmanconfig b/ExpoDiffApp/.watchmanconfig
+deleted file mode 100644
+index 0967ef4..0000000
+--- a/ExpoDiffApp/.watchmanconfig
++++ /dev/null
+@@ -1 +0,0 @@
+-{}
+diff --git a/ExpoDiffApp/app.json b/ExpoDiffApp/app.json
+index 0772c81..6b5755a 100644
+--- a/ExpoDiffApp/app.json
++++ b/ExpoDiffApp/app.json
+@@ -3,7 +3,7 @@
+     "name": "ExpoDiffApp",
+     "slug": "ExpoDiffApp",
+     "privacy": "public",
+-    "sdkVersion": "34.0.0",
++    "sdkVersion": "35.0.0",
+     "platforms": [
+       "ios",
+       "android",
+diff --git a/ExpoDiffApp/package.json b/ExpoDiffApp/package.json
+index 89464e8..ccbc6f2 100644
+--- a/ExpoDiffApp/package.json
++++ b/ExpoDiffApp/package.json
+@@ -10,14 +10,14 @@
+     "eject": "expo eject"
+   },
+   "dependencies": {
+-    "expo": "^34.0.1",
++    "expo": "^35.0.0",
+     "react": "16.8.3",
+-    "react-dom": "^16.8.6",
+-    "react-native": "https://github.com/expo/react-native/archive/sdk-34.0.0.tar.gz",
+-    "react-native-web": "^0.11.4"
++    "react-dom": "16.8.3",
++    "react-native": "https://github.com/expo/react-native/archive/sdk-35.0.0.tar.gz",
++    "react-native-web": "^0.11.7"
+   },
+   "devDependencies": {
+-    "babel-preset-expo": "^6.0.0"
++    "babel-preset-expo": "^7.1.0"
+   },
+   "private": true
+ }

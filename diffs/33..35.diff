@@ -1,0 +1,73 @@
+diff --git a/ExpoDiffApp/.expo-shared/assets.json b/ExpoDiffApp/.expo-shared/assets.json
+new file mode 100644
+index 0000000..17ad228
+--- /dev/null
++++ b/ExpoDiffApp/.expo-shared/assets.json
+@@ -0,0 +1,4 @@
++{
++  "f9155ac790fd02fadcdeca367b02581c04a353aa6d5aa84409a59f6804c87acd": true,
++  "89ed26367cdb9b771858e026f2eb95bfdb90e5ae943e716575327ec325f39c44": true
++}
+\ No newline at end of file
+diff --git a/ExpoDiffApp/.gitignore b/ExpoDiffApp/.gitignore
+index d40d999..c409cf6 100644
+--- a/ExpoDiffApp/.gitignore
++++ b/ExpoDiffApp/.gitignore
+@@ -2,9 +2,13 @@ node_modules/**/*
+ .expo/*
+ npm-debug.*
+ *.jks
++*.p8
+ *.p12
+ *.key
+ *.mobileprovision
+ *.orig.*
+ web-build/
+ web-report/
++
++# macOS
++.DS_Store
+diff --git a/ExpoDiffApp/.watchmanconfig b/ExpoDiffApp/.watchmanconfig
+deleted file mode 100644
+index 0967ef4..0000000
+--- a/ExpoDiffApp/.watchmanconfig
++++ /dev/null
+@@ -1 +0,0 @@
+-{}
+diff --git a/ExpoDiffApp/app.json b/ExpoDiffApp/app.json
+index 27dbe1e..6b5755a 100644
+--- a/ExpoDiffApp/app.json
++++ b/ExpoDiffApp/app.json
+@@ -3,7 +3,7 @@
+     "name": "ExpoDiffApp",
+     "slug": "ExpoDiffApp",
+     "privacy": "public",
+-    "sdkVersion": "33.0.0",
++    "sdkVersion": "35.0.0",
+     "platforms": [
+       "ios",
+       "android",
+diff --git a/ExpoDiffApp/package.json b/ExpoDiffApp/package.json
+index 02d32ee..ccbc6f2 100644
+--- a/ExpoDiffApp/package.json
++++ b/ExpoDiffApp/package.json
+@@ -10,14 +10,14 @@
+     "eject": "expo eject"
+   },
+   "dependencies": {
+-    "expo": "^33.0.0",
++    "expo": "^35.0.0",
+     "react": "16.8.3",
+-    "react-dom": "^16.8.6",
+-    "react-native": "https://github.com/expo/react-native/archive/sdk-33.0.0.tar.gz",
+-    "react-native-web": "^0.11.4"
++    "react-dom": "16.8.3",
++    "react-native": "https://github.com/expo/react-native/archive/sdk-35.0.0.tar.gz",
++    "react-native-web": "^0.11.7"
+   },
+   "devDependencies": {
+-    "babel-preset-expo": "^5.1.1"
++    "babel-preset-expo": "^7.1.0"
+   },
+   "private": true
+ }
