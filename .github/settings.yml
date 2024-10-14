@@ -1,7 +1,7 @@
 repository:
   name: expo-diff-purge
   description: "Documenting `expo init` changes from each SDK to the next. :rocket:"
-  homepage: https://react-native-community.github.io/upgrade-helperaaaaa
+  homepage: https://react-native-community.github.io/upgrde-helperaaaaa
   topics: expo, react-native, upgrade, purge, rn-diff, rn-diff-purge, upgrade-helper
 
   has_wiki: false
