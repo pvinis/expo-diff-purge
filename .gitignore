@@ -12,3 +12,4 @@ wt-app
 wt-diffs
 yarn-error.log
 .yarn/cache
+tmpfile
