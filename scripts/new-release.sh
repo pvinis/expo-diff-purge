@@ -6,7 +6,7 @@ ErrorReleaseExists=2
 ErrorReleaseArgMissing=3
 ErrorReleaseTagExists=4
 
-AppName=RnDiffApp
+AppName=ExpoDiffApp
 AppBaseBranch=app-base
 ReleasesFile=RELEASES
 ReadmeFile=README.md
@@ -57,21 +57,10 @@ function generateNewReleaseBranch () {
     git checkout -b "$branchName"
 
     # generate app and remove generated git repo
-    # if we're generating the template for an -rc release, let's grab cli@next
-    if [[ $newRelease == *-rc* ]]; then
-      npx @react-native-community/cli@next init "$AppName" --version "$newRelease" --skip-install
-    else
-      npx @react-native-community/cli@latest init "$AppName" --version "$newRelease" --skip-install
-    fi
+    pnpx create-expo-app@latest "$AppName" --template blank@"$newRelease"
 
     # clean up before committing for diffing
     rm -rf "$AppName"/.git
-    rm -rf "$AppName"/.yarn
-    rm -rf "$AppName"/.yarnrc
-    echo "nodeLinker: node-modules" > "$AppName"/.yarnrc.yml
-    echo "" >> "$AppName"/.yarnrc.yml
-    echo "yarnPath: .yarn/releases/yarn-3.6.4.cjs" >> "$AppName"/.yarnrc.yml
-    npx node-jq '. + {"packageManager": "yarn@3.6.4"}' "$AppName"/package.json | npx sponge "$AppName"/package.json
 
     # commit and push branch
     git add "$AppName"
