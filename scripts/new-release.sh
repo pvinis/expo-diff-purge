@@ -8,9 +8,6 @@ ErrorReleaseArgMissing=3
 AppName=ExpoDiffApp
 AppBaseBranch=app-base
 ReleasesFile=RELEASES
-ReadmeFile=README.md
-ReadmeTable=README_TABLE.md
-ReadmeTableBig=README_TABLE_BIG.md
 
 NumberOfReleases=12 # the number of releases on the table
 
@@ -75,11 +72,11 @@ function addReleaseToList () {
     echo "$newRelease" >> "$ReleasesFile"
 
     if command -v tac; then
-        #   take each line ->dedup->    sort them              -> reverse them -> save them
-        cat "$ReleasesFile" | uniq | xargs npx --silent semver | tac           > tmpfile
+        #   take each line ->dedup->sort -> reverse them -> save them
+        cat "$ReleasesFile" | uniq | sort | tac           > tmpfile
     else
-        #   take each line ->dedup->    sort them              -> reverse them -> save them
-        cat "$ReleasesFile" | uniq | xargs npx --silent semver | tail -r       > tmpfile
+        #   take each line ->dedup->sort ->reverse       -> save them
+        cat "$ReleasesFile" | uniq | sort | tail -r       > tmpfile
     fi
 
     mv tmpfile "$ReleasesFile"
@@ -127,38 +124,7 @@ function pushMaster () {
     git push
 }
 
-function generateTable () {
-    head -n "$NumberOfReleases" "$ReleasesFile" | ./scripts/generate-table.js > "$ReadmeTable"
-}
-
-function generateBigTable () {
-    cat "$ReleasesFile" | ./scripts/generate-table.js --big > "$ReadmeTableBig"
-}
-
-ReadmeHeader=README_HEADER.md
-ReadmeFooter=README_FOOTER.md
-
-function breakUpReadme () {
-    perl -p0e 's/(.*## Diff table[^\n]*\n\n)(.*)/$1/smg' "$ReadmeFile" > "$ReadmeHeader"
-    perl -p0e 's/(.*)(\n## To see.*)/$2/smg' "$ReadmeFile" > "$ReadmeFooter"
-}
-
-function makeUpReadme () {
-    cat "$ReadmeHeader" "$ReadmeTable" "$ReadmeFooter" > "$ReadmeFile"
-}
-
-function generateReadme () {
-    breakUpReadme
-    makeUpReadme
-}
-
-function generateGHPages () {
-    cp docs/_index.html docs/index.html
-    pnpm markdown "$ReadmeTableBig" >> docs/index.html
-}
-
 function cleanUp () {
-    rm -rf "$ReadmeHeader" "$ReadmeFooter" "$ReadmeTable" "$ReadmeTableBig"
     rm -rf wt-app
     git worktree prune
 }
@@ -173,12 +139,6 @@ prepare
 generateNewReleaseBranch
 addReleaseToList
 generateDiffs
-
-generateTable
-generateReadme
-
-generateBigTable
-generateGHPages
 
 cleanUp
 pushMaster
