@@ -11,7 +11,6 @@ ReleasesFile=RELEASES
 
 NumberOfReleases=12 # the number of releases on the table
 
-IgnorePaths=("README.md")
 
 function guardMissingArg () {
     if [ "$#" -ne 1 ]; then
@@ -91,7 +90,7 @@ function generateDiffs () {
     git pull
     cd ..
 
-    IFS=$'\n' GLOBIGNORE='*' command eval 'releases=($(cat "$ReleasesFile"))'
+    IFS=$'\n' command eval 'releases=($(cat "$ReleasesFile"))'
     for existingRelease in "${releases[@]}"
     do
         if [ "$existingRelease" == "$newRelease" ]; then
@@ -102,13 +101,7 @@ function generateDiffs () {
             continue
         fi
 
-        ignoreArgs=()
-        for path in "${IgnorePaths[@]}"; do
-            ignoreArgs+=(":!$path")
-        done
-
-        git diff --binary -w -M15% origin/release/"$existingRelease"..origin/release/"$newRelease" \
-            -- . "${ignoreArgs[@]}" > wt-diffs/diffs/"$existingRelease".."$newRelease".diff
+        git diff --binary -w -M15% origin/release/"$existingRelease"..origin/release/"$newRelease" > wt-diffs/diffs/"$existingRelease".."$newRelease".diff
     done
 
     cd wt-diffs
