@@ -1,0 +1,29 @@
+diff --git a/ExpoDiffApp/.expo-shared/assets.json b/ExpoDiffApp/.expo-shared/assets.json
+deleted file mode 100644
+index 1e6decf..0000000
+--- a/ExpoDiffApp/.expo-shared/assets.json
++++ /dev/null
+@@ -1,4 +0,0 @@
+-{
+-  "12bb71342c6255bbf50437ec8f4441c083f47cdb74bd89160c15e4f43e52a1cb": true,
+-  "40b842e832070c58deac6aa9e08fa459302ee3f9da492c7e77d93d2fbf4a56fd": true
+-}
+diff --git a/ExpoDiffApp/package.json b/ExpoDiffApp/package.json
+index b562631..cf0928d 100644
+--- a/ExpoDiffApp/package.json
++++ b/ExpoDiffApp/package.json
+@@ -9,10 +9,10 @@
+     "web": "expo start --web"
+   },
+   "dependencies": {
+-    "expo": "~46.0.21",
+-    "expo-status-bar": "~1.4.0",
+-    "react": "18.0.0",
+-    "react-native": "0.69.9"
++    "expo": "~47.0.14",
++    "expo-status-bar": "~1.4.2",
++    "react": "18.1.0",
++    "react-native": "0.70.8"
+   },
+   "devDependencies": {
+     "@babel/core": "^7.12.9"

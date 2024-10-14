@@ -1,0 +1,67 @@
+diff --git a/ExpoDiffApp/.expo-shared/assets.json b/ExpoDiffApp/.expo-shared/assets.json
+deleted file mode 100644
+index 1e6decf..0000000
+--- a/ExpoDiffApp/.expo-shared/assets.json
++++ /dev/null
+@@ -1,4 +0,0 @@
+-{
+-  "12bb71342c6255bbf50437ec8f4441c083f47cdb74bd89160c15e4f43e52a1cb": true,
+-  "40b842e832070c58deac6aa9e08fa459302ee3f9da492c7e77d93d2fbf4a56fd": true
+-}
+diff --git a/ExpoDiffApp/.gitignore b/ExpoDiffApp/.gitignore
+index ec8a36a..772ef29 100644
+--- a/ExpoDiffApp/.gitignore
++++ b/ExpoDiffApp/.gitignore
+@@ -12,3 +12,6 @@ web-build/
+ 
+ # macOS
+ .DS_Store
++
++# Temporary files created by Metro to check the health of the file watcher
++.metro-health-check*
+diff --git a/ExpoDiffApp/app.json b/ExpoDiffApp/app.json
+index c917a6e..db4f794 100644
+--- a/ExpoDiffApp/app.json
++++ b/ExpoDiffApp/app.json
+@@ -11,9 +11,6 @@
+       "resizeMode": "contain",
+       "backgroundColor": "#ffffff"
+     },
+-    "updates": {
+-      "fallbackToCacheTimeout": 0
+-    },
+     "assetBundlePatterns": [
+       "**/*"
+     ],
+@@ -23,7 +20,7 @@
+     "android": {
+       "adaptiveIcon": {
+         "foregroundImage": "./assets/adaptive-icon.png",
+-        "backgroundColor": "#FFFFFF"
++        "backgroundColor": "#ffffff"
+       }
+     },
+     "web": {
+diff --git a/ExpoDiffApp/package.json b/ExpoDiffApp/package.json
+index b562631..4a03f1f 100644
+--- a/ExpoDiffApp/package.json
++++ b/ExpoDiffApp/package.json
+@@ -9,13 +9,13 @@
+     "web": "expo start --web"
+   },
+   "dependencies": {
+-    "expo": "~46.0.21",
+-    "expo-status-bar": "~1.4.0",
+-    "react": "18.0.0",
+-    "react-native": "0.69.9"
++    "expo": "~48.0.21",
++    "expo-status-bar": "~1.4.4",
++    "react": "18.2.0",
++    "react-native": "0.71.14"
+   },
+   "devDependencies": {
+-    "@babel/core": "^7.12.9"
++    "@babel/core": "^7.20.0"
+   },
+   "private": true
+ }

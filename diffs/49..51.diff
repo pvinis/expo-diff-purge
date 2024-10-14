@@ -1,0 +1,41 @@
+diff --git a/ExpoDiffApp/app.json b/ExpoDiffApp/app.json
+index db4f794..af950c9 100644
+--- a/ExpoDiffApp/app.json
++++ b/ExpoDiffApp/app.json
+@@ -11,9 +11,6 @@
+       "resizeMode": "contain",
+       "backgroundColor": "#ffffff"
+     },
+-    "assetBundlePatterns": [
+-      "**/*"
+-    ],
+     "ios": {
+       "supportsTablet": true
+     },
+diff --git a/ExpoDiffApp/package.json b/ExpoDiffApp/package.json
+index 8c1f496..31a7830 100644
+--- a/ExpoDiffApp/package.json
++++ b/ExpoDiffApp/package.json
+@@ -1,7 +1,7 @@
+ {
+   "name": "expodiffapp",
+   "version": "1.0.0",
+-  "main": "node_modules/expo/AppEntry.js",
++  "main": "expo/AppEntry.js",
+   "scripts": {
+     "start": "expo start",
+     "android": "expo start --android",
+@@ -9,10 +9,10 @@
+     "web": "expo start --web"
+   },
+   "dependencies": {
+-    "expo": "~49.0.23",
+-    "expo-status-bar": "~1.6.0",
++    "expo": "~51.0.28",
++    "expo-status-bar": "~1.12.1",
+     "react": "18.2.0",
+-    "react-native": "0.72.10"
++    "react-native": "0.74.5"
+   },
+   "devDependencies": {
+     "@babel/core": "^7.20.0"

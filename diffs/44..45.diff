@@ -1,0 +1,35 @@
+diff --git a/ExpoDiffApp/app.json b/ExpoDiffApp/app.json
+index 499e1b4..c917a6e 100644
+--- a/ExpoDiffApp/app.json
++++ b/ExpoDiffApp/app.json
+@@ -5,6 +5,7 @@
+     "version": "1.0.0",
+     "orientation": "portrait",
+     "icon": "./assets/icon.png",
++    "userInterfaceStyle": "light",
+     "splash": {
+       "image": "./assets/splash.png",
+       "resizeMode": "contain",
+diff --git a/ExpoDiffApp/package.json b/ExpoDiffApp/package.json
+index 22a4ac5..fc265d1 100644
+--- a/ExpoDiffApp/package.json
++++ b/ExpoDiffApp/package.json
+@@ -10,12 +10,12 @@
+     "eject": "expo eject"
+   },
+   "dependencies": {
+-    "expo": "~44.0.0",
+-    "expo-status-bar": "~1.2.0",
+-    "react": "17.0.1",
+-    "react-dom": "17.0.1",
+-    "react-native": "0.64.3",
+-    "react-native-web": "0.17.1"
++    "expo": "~45.0.0",
++    "expo-status-bar": "~1.3.0",
++    "react": "17.0.2",
++    "react-dom": "17.0.2",
++    "react-native": "0.68.2",
++    "react-native-web": "0.17.7"
+   },
+   "devDependencies": {
+     "@babel/core": "^7.12.9"

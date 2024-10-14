@@ -1,0 +1,106 @@
+diff --git a/ExpoDiffApp/.expo-shared/assets.json b/ExpoDiffApp/.expo-shared/assets.json
+deleted file mode 100644
+index 1e6decf..0000000
+--- a/ExpoDiffApp/.expo-shared/assets.json
++++ /dev/null
+@@ -1,4 +0,0 @@
+-{
+-  "12bb71342c6255bbf50437ec8f4441c083f47cdb74bd89160c15e4f43e52a1cb": true,
+-  "40b842e832070c58deac6aa9e08fa459302ee3f9da492c7e77d93d2fbf4a56fd": true
+-}
+diff --git a/ExpoDiffApp/.gitignore b/ExpoDiffApp/.gitignore
+index ec8a36a..05647d5 100644
+--- a/ExpoDiffApp/.gitignore
++++ b/ExpoDiffApp/.gitignore
+@@ -1,14 +1,35 @@
++# Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
++
++# dependencies
+ node_modules/
++
++# Expo
+ .expo/
+ dist/
+-npm-debug.*
++web-build/
++
++# Native
++*.orig.*
+ *.jks
+ *.p8
+ *.p12
+ *.key
+ *.mobileprovision
+-*.orig.*
+-web-build/
++
++# Metro
++.metro-health-check*
++
++# debug
++npm-debug.*
++yarn-debug.*
++yarn-error.*
+ 
+ # macOS
+ .DS_Store
++*.pem
++
++# local env files
++.env*.local
++
++# typescript
++*.tsbuildinfo
+diff --git a/ExpoDiffApp/app.json b/ExpoDiffApp/app.json
+index c917a6e..db4f794 100644
+--- a/ExpoDiffApp/app.json
++++ b/ExpoDiffApp/app.json
+@@ -11,9 +11,6 @@
+       "resizeMode": "contain",
+       "backgroundColor": "#ffffff"
+     },
+-    "updates": {
+-      "fallbackToCacheTimeout": 0
+-    },
+     "assetBundlePatterns": [
+       "**/*"
+     ],
+@@ -23,7 +20,7 @@
+     "android": {
+       "adaptiveIcon": {
+         "foregroundImage": "./assets/adaptive-icon.png",
+-        "backgroundColor": "#FFFFFF"
++        "backgroundColor": "#ffffff"
+       }
+     },
+     "web": {
+diff --git a/ExpoDiffApp/package.json b/ExpoDiffApp/package.json
+index fc265d1..90920d6 100644
+--- a/ExpoDiffApp/package.json
++++ b/ExpoDiffApp/package.json
+@@ -6,19 +6,16 @@
+     "start": "expo start",
+     "android": "expo start --android",
+     "ios": "expo start --ios",
+-    "web": "expo start --web",
+-    "eject": "expo eject"
++    "web": "expo start --web"
+   },
+   "dependencies": {
+-    "expo": "~45.0.0",
+-    "expo-status-bar": "~1.3.0",
+-    "react": "17.0.2",
+-    "react-dom": "17.0.2",
+-    "react-native": "0.68.2",
+-    "react-native-web": "0.17.7"
++    "expo": "~50.0.17",
++    "expo-status-bar": "~1.11.1",
++    "react": "18.2.0",
++    "react-native": "0.73.6"
+   },
+   "devDependencies": {
+-    "@babel/core": "^7.12.9"
++    "@babel/core": "^7.20.0"
+   },
+   "private": true
+ }
